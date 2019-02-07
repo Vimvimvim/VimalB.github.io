@@ -40,28 +40,29 @@ layout: default
   <div class="language-r highlighter-rouge" width=90%>
   <div class="highlight" height=90% padding=6%><pre class="highlight">
     <code>
-     uniqueairlines$bookingcountry <- as.factor(uniqueairlines$bookingcountry)
+uniqueairlines$bookingcountry <- as.factor(uniqueairlines$bookingcountry)
 
 bucketedcountries <- list(
   NorthAmerica = c("US", "CA", "MX"),
   SouthAmerica = c("AR", "BR"),
   Africa = c("CM", "ET", "MW","NA", "ZA","ZW"),
-  Asia = c("CN", "HK", "IL", "IN", "JP", "KR", "LB", "PH", "PK", "SA", "TH"),
+  Asia = c("CN", "HK", "IL", "IN", "JP", "KR", "LB", "PH", "PK", "SA", 
+  "TH"),
   Oceania = c("AU", "NZ"),
-  Europe = c("AL", "AT", "BE", "CH", "CS", "CY", "DE", "DK", "FR", "GB", "NL",
-   "NO", "RO", "RS", "SE"),
+  Europe = c("AL", "AT", "BE", "CH", "CS", "CY", "DE", "DK", "FR", "GB", 
+    "NL",
+    "NO", "RO", "RS", "SE"),
   Unknown = c("")
 )
 
 for (i in 1:length(bucketedcountries)) {
-  levels(uniqueairlines$bookingcountry)[levels(uniqueairlines$bookingcountry)
+  levels(uniqueairlines$bookingcountry)[levels
+    (uniqueairlines$bookingcountry)
     %in%bucketedcountries[[i]]] <- names(bucketedcountries)[i]
 }
     </code></pre>
    </div>
  </div>
     <h3>Coefficient Testing</h3>
-  
 
-  HELLO
   <a href="index.html"> <h4>Home</h4></a>
