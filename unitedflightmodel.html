@@ -20,16 +20,16 @@ layout: default
 </p>
 <h2>The Model </h2>
 
+ ```r
 <div class="language-r highlighter-rouge">
   <div class="highlight"><pre class="highlight">
     <code>
-    ```r
       model1 <- glm(noshow ~ numberinparty + as.factor(bookingcountry) + 
       daystodep + as.factor(dow) + upline + downline + assignedseat + 
       as.factor(bookingclass) + modifycount + as.factor(mileageplus), 
       data = subset(uniqueairlines, daystodep > 4), 
       family = binomial(link = "logit"))
-      ```
-</code></pre></div></div>	
+</code></pre></div></div>
+ ```
   
   <a href="index.html"> <h4>Home</h4></a>
