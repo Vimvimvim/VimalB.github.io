@@ -23,14 +23,45 @@ layout: default
 <div class="language-r highlighter-rouge">
   <div class="highlight" height=90% padding=6%><pre class="highlight">
     <code>
-      model1 <- glm(noshow ~ numberinparty + as.factor(bookingcountry) + 
-      daystodep + as.factor(dow) + upline + downline + assignedseat + 
-      as.factor(bookingclass) + modifycount + as.factor(mileageplus), 
+      model1 <- glm(noshow ~ numberinparty + as.factor(bookingcountry) 
+      + daystodep + as.factor(dow) + upline + downline + assignedseat 
+      + as.factor(bookingclass) + modifycount + as.factor(mileageplus), 
       data = subset(uniqueairlines, daystodep > 4), 
       family = binomial(link = "logit"))
     </code></pre>
    </div>
  </div>
-HI
+<p> Prior to building this model, certain steps were taken </p>
+<h3> Data Cleaning </h3>
+<p> The raw data for booking class and country was extremely granular (with many categories having < 5 observations). 
+      In order to avoid noise and inflated errors the data was bucketed into more meaningful categories. One such
+      example is below:
+</p>
+  <div class="language-r highlighter-rouge">
+  <div class="highlight" height=90% padding=6%><pre class="highlight">
+    <code>
+     uniqueairlines$bookingcountry <- as.factor(uniqueairlines$bookingcountry)
+
+bucketedcountries <- list(
+  NorthAmerica = c("US", "CA", "MX"),
+  SouthAmerica = c("AR", "BR"),
+  Africa = c("CM", "ET", "MW","NA", "ZA","ZW"),
+  Asia = c("CN", "HK", "IL", "IN", "JP", "KR", "LB", "PH", "PK", "SA", "TH"),
+  Oceania = c("AU", "NZ"),
+  Europe = c("AL", "AT", "BE", "CH", "CS", "CY", "DE", "DK", "FR", "GB", "NL",
+   "NO", "RO", "RS", "SE"),
+  Unknown = c("")
+)
+
+for (i in 1:length(bucketedcountries)) {
+  levels(uniqueairlines$bookingcountry)[levels(uniqueairlines$bookingcountry)
+    %in%bucketedcountries[[i]]] <- names(bucketedcountries)[i]
+}
+    </code></pre>
+   </div>
+ </div>
+    <h3>Coefficient Testing</h3>
+  
+
   
   <a href="index.html"> <h4>Home</h4></a>
