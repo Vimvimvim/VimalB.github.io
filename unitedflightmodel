@@ -1,0 +1,16 @@
+<h4>Situation: Airline cost structure  </h4>
+<p> Airlines face huge overhead costs with relatively little marginal expense per additional passenger. They recoup this cost by maximizing 
+  passenger uptake on all of their flights.
+</p>
+
+<h4>Problem: No-Shows on flights</h4>
+<p> When passengers don't show up for their flight, the airline effectively loses nearly all of the revenue from that passenger's ticket. 
+  They mitigate this issue by overbooking, ensuring that there are more passengers than the flight's capacity. However, overbooking too aggressively
+  can have dire consequences, both logistically in the airport and for the reputation of the entire airline
+</p>
+<h4>Resolution: A Predictive model for no-shows on flights </h4>
+<p> The following model uses data from a month of United flights from Chicago to D.C to predict the number of no-shows on a given flight.
+  Explanatory variables include the size of the traveling party, the country from which the was made, how far in advance it was made,
+  the connection status of the flight, whether it has assigned seats, the booking class, use of frequent flyer miles, 
+  and the number of times the booking was modified. 
+</p>
