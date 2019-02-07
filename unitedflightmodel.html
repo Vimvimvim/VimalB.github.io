@@ -19,11 +19,10 @@ layout: default
   and the number of times the booking was modified. 
 </p>
 <h2>The Model </h2>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Javascript code with syntax highlighting.</span>
-<span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">lang</span><span class="p">(</span><span class="nx">l</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">dateformat</span><span class="p">.</span><span class="nx">i18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./lang/'</span> <span class="o">+</span> <span class="nx">l</span><span class="p">)</span>
-  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
 
+```r
+model1 <- glm(noshow ~ numberinparty + as.factor(bookingcountry) + daystodep + as.factor(dow) + upline + downline + assignedseat + 
+          as.factor(bookingclass) + modifycount + as.factor(mileageplus), data = subset(uniqueairlines, daystodep > 4), 
+          family = binomial(link = "logit"))
+```
 <a href="index.html">Home</a>
