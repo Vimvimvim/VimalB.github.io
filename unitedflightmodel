@@ -1,3 +1,5 @@
+<html>
+
 <h4>Situation: Airline cost structure  </h4>
 <p> Airlines face huge overhead costs with relatively little marginal expense per additional passenger. They recoup this cost by maximizing 
   passenger uptake on all of their flights.
@@ -14,3 +16,5 @@
   the connection status of the flight, whether it has assigned seats, the booking class, use of frequent flyer miles, 
   and the number of times the booking was modified. 
 </p>
+
+</html>
