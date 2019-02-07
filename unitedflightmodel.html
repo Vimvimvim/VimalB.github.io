@@ -23,9 +23,13 @@ layout: default
 <div class="language-r highlighter-rouge">
   <div class="highlight"><pre class="highlight">
     <code>
-      model1 <- glm(noshow ~ numberinparty + as.factor(bookingcountry) + daystodep + as.factor(dow) + upline + downline + assignedseat + 
+    ```r
+      model1 <- glm(noshow ~ numberinparty + as.factor(bookingcountry) + 
+      daystodep + as.factor(dow) + upline + downline + assignedseat + 
       as.factor(bookingclass) + modifycount + as.factor(mileageplus), 
-      data = subset(uniqueairlines, daystodep > 4), family = binomial(link = "logit"))
+      data = subset(uniqueairlines, daystodep > 4), 
+      family = binomial(link = "logit"))
+      ```
 </code></pre></div></div>	
   
   <a href="index.html"> <h4>Home</h4></a>
