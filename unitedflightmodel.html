@@ -74,10 +74,10 @@ for (i in 1:length(bucketedcountries)) {
     <div class="highlight" height=90% padding=6%>
       <pre class="highlight">
       <code>
-model2 <- glm(noshow ~ numberinparty +  daystodep + as.factor(dow) + upline
-+ downline + assignedseat + as.factor(bookingclass) + modifycount + 
-as.factor(mileageplus), data = subset(uniqueairlines, daystodep > 4),
-family = binomial(link = "logit"))
+model2 <- glm(noshow ~ numberinparty +  daystodep + as.factor(dow) 
++ upline + downline + assignedseat + as.factor(bookingclass) + 
+modifycount + as.factor(mileageplus), data = subset(uniqueairlines, 
+daystodep > 4), family = binomial(link = "logit"))
 
 anova(model1, model2, test = "Chisq")
       </code>
