@@ -74,16 +74,16 @@ for (i in 1:length(bucketedcountries)) {
     <div class="highlight" height=90% padding=6%>
       <pre class="highlight">
       <code>
-        model2 <- glm(noshow ~ numberinparty +  daystodep + as.factor(dow) + upline + downline + assignedseat + 
-        as.factor(bookingclass) + modifycount + as.factor(mileageplus), data = subset(uniqueairlines, daystodep > 4),
-        family = binomial(link = "logit"))
-        
-        anova(model1, model2, test = "Chisq")
+model2 <- glm(noshow ~ numberinparty +  daystodep + as.factor(dow) + upline
++ downline + assignedseat + as.factor(bookingclass) + modifycount + 
+as.factor(mileageplus), data = subset(uniqueairlines, daystodep > 4),
+family = binomial(link = "logit"))
 
+anova(model1, model2, test = "Chisq")
       </code>
       </pre>
      </div>
-   /div>
+   </div>
    <p> The p-value for the Analysis of Variances here is .2173, which suggests that booking country does not have an effect 
      on tendency to show up for a flight from Chicago to DC on United Flights
    </p>
