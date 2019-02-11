@@ -17,6 +17,8 @@ layout: default
   Explanatory variables include the size of the traveling party, the country from which the was made, how far in advance it was made,
   the connection status of the flight, whether it has assigned seats, the booking class, use of frequent flyer miles, 
   and the number of times the booking was modified. 
+  To be useful, the model must be designed for use in advance of the flight date. Accordingly, the input data was restricted to observations
+  with daystodep (days to departure) < 5
 </p>
 <h2>The Model </h2>
 
@@ -64,5 +66,28 @@ for (i in 1:length(bucketedcountries)) {
    </div>
  </div>
     <h3>Coefficient Testing</h3>
+    <p> Given that we are modeling only domestic flights using primarily data from American passengers, it is entirely possible that bookingcountry
+      actually has no effect on tendency to show up for a flight. With this in mind, the Wald test is used to evaluate collective 
+      significance of the bookingcountry dummy variables.
+    </p>
+  <div class="language-r highlighter-rouge">
+    <div class="highlight" height=90% padding=6%>
+      <pre class="highlight">
+      <code>
+        model2 <- glm(noshow ~ numberinparty +  daystodep + as.factor(dow) + upline + downline + assignedseat + 
+        as.factor(bookingclass) + modifycount + as.factor(mileageplus), data = subset(uniqueairlines, daystodep > 4),
+        family = binomial(link = "logit"))
+        
+        anova(model1, model2, test = "Chisq")
 
+      </code>
+      </pre>
+     </div>
+   /div>
+   <p> The p-value for the Analysis of Variances here is .2173, which suggests that booking country does not have an effect 
+     on tendency to show up for a flight from Chicago to DC on United Flights
+   </p>
+   
+     
+      
   <a href="index.html"> <h4>Home</h4></a>
