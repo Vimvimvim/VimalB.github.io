@@ -3,9 +3,22 @@ layout: default
 ---
 <h1> Life expectancy of Chicago Neighborhoods </h1>
 <p> A historical survey of life expectancy across Chicago neighborhoods over the last three decades, ordered by life expectancy in 1990,
-  ascending. 
+  ascending. The SOQL pull and resulting table are displayed below. Generally, the last three decades saw disparities across neighborhoods
+  close, with some less affluent areas experiencing almost a 20 year increase in average life-expectancy.
 </p>
-
+ <div class="language-sql highlighter-rouge">
+    <div class="highlight" height=90% padding=6%>
+      <pre class="highlight">
+      <code>
+SELECT  _1990_life_expectancy, _2000_life_expectancy, _2010_life_expectancy, community_area 
+  WHERE community_area NOT LIKE 'CHICAGO '
+  ORDER BY _1990_life_expectancy
+      </code>
+      </pre>
+     </div>
+   </div>
+<p> Chicago public records: https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Life-Expectancy-By-Commun/qjr3-bm53 
+</p>
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">_1990_life_expectancy</th>
 <th title="Field #2">_2000_life_expectanc</th>
